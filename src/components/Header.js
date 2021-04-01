@@ -1,4 +1,4 @@
-export default function Header({onAddToDo}) {
+export default function Header({ onAddToDo }) {
   function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
@@ -11,13 +11,14 @@ export default function Header({onAddToDo}) {
     <header className="Header">
       <form onSubmit={handleSubmit}>
         <input
+          className="inputBox"
           id="input"
           name="input"
           type="text"
-          placeholder="Your Todo here..."
+          placeholder="Your todo..."
           required
         />
-        <button className="add-button" type="submit">
+        <button className="addButton" type="submit">
           Add{" "}
         </button>
       </form>

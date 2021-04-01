@@ -17,14 +17,13 @@ code {
   display: flex;
   align-items: center;
   padding: 1rem;
-justify-content: center;
+  justify-content: center;
 }
 
 .List {
   display: flex;
   justify-content: space-between;
   margin: 5px 0;
-
 }
 
 .ListedItem {
@@ -42,7 +41,15 @@ justify-content: center;
 }
 
 .ListItemDelete {
-    color: red;
+  color: red;
   flex-grow: 0;
   cursor: pointer;
+}
+
+.addButton {
+  padding: 4px;
+}
+
+.inputBox {
+  padding: 5px;
 }
