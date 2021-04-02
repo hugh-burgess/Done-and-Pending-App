@@ -3,6 +3,7 @@ import ListItem from "./ListItem.js";
 export default function List({ listItems, handleToggle, handleDeleteToDo }) {
   function renderList() {
     return listItems.map((toDoBox, index) => {
+      index = toDoBox.name;
       return (
         <ListItem
           key={toDoBox.name}

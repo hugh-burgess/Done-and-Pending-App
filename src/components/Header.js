@@ -3,7 +3,7 @@ export default function Header({ onAddToDo }) {
     event.preventDefault();
     const form = event.target;
     onAddToDo(form.input.value);
-    console.log(`Input given: ${form.input.value}`);
+
     form.reset();
   }
 
