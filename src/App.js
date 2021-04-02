@@ -9,12 +9,12 @@ export default function App() {
 
   function handleDeleteToDo(name) {
     const NewToDoName = toDoBox.filter((toDoBox) => toDoBox.name !== name);
-
     setToDoBox(NewToDoName);
   }
 
   function handleAddToDo(inputName) {
     console.clear();
+
     const NewToDoName = [
       ...toDoBox,
       {
@@ -26,15 +26,18 @@ export default function App() {
     for (let i = 0; i < NewToDoName.length; i++) {
       if (NewToDoName[i].isComplete === false) {
         console.log(`${NewToDoName[i].name} is pending`);
-      }
-      setToDoBox(NewToDoName);
+      } else {
+      console.log(`${NewToDoName[i].name} is completed`)
     }
+      setToDoBox(NewToDoName);
+    } 
     console.log(NewToDoName);
   }
 
   function handleToggle(name) {
     const NewToDoName = toDoBox.map((input) => {
       if (input.name === name) {
+        console.log("done");
         return {
           ...input,
           isComplete: !input.isComplete,
@@ -43,18 +46,8 @@ export default function App() {
         return input;
       }
     });
-    setToDoBox(NewToDoName);
-  }
 
-  function CompletedList({ value }) {
-    return (
-      <div className="completedList">
-        <h2>Completed List</h2>
-        <ul className="ulCompletedList">
-          <li>{value}</li>
-        </ul>
-      </div>
-    );
+    setToDoBox(NewToDoName);
   }
 
   return (
@@ -65,7 +58,6 @@ export default function App() {
         handleToggle={handleToggle}
         handleDeleteToDo={handleDeleteToDo}
       />
-      <CompletedList />
     </div>
   );
 }
