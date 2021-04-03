@@ -9,7 +9,7 @@ export default function Header({ onAddToDo, isToggled }) {
     form.reset();
   }
 
-function filterSelection1() {
+function filterAll() {
   const allArray = []
   const all = document.getElementsByClassName("all")
   allArray.push(all) 
@@ -19,7 +19,7 @@ function filterSelection1() {
 }
 
 
-function filterSelection2() {
+function filterPending() {
   const pendingArray = []
   const pending = document.getElementsByClassName("pending")
   pendingArray.push(pending) 
@@ -27,7 +27,7 @@ function filterSelection2() {
 }
 
 
-function filterSelection3() {
+function filterCompleted() {
   const completedArray = []
   const completed = document.getElementsByClassName("completed")
   completedArray.push(completed) 
@@ -51,9 +51,9 @@ function filterSelection3() {
         </button>
       </form>
       <div className="headerOptions">
-      <button onClick={filterSelection1} className="buttonOptions">All</button>
-      <button onClick={filterSelection2} className="buttonOptions">Pending</button>
-      <button onClick={filterSelection3} className="buttonOptions">Completed</button>
+      <button onClick={filterAll} className="buttonOptions">All</button>
+      <button onClick={filterPending} className="buttonOptions">Pending</button>
+      <button onClick={filterCompleted} className="buttonOptions">Completed</button>
       </div>
       
     </header>
