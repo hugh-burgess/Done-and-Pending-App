@@ -1,5 +1,4 @@
 import { AiFillEdit } from "react-icons/ai";
-import { useState } from "react";
 
 export default function ListItem({
   index,

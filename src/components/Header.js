@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Header({ onAddToDo, isToggled }) {
+export default function Header({ onAddToDo, setFilter }) {
   function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
@@ -9,26 +9,20 @@ export default function Header({ onAddToDo, isToggled }) {
     form.reset();
   }
 
-  function filterAll() {
-    const allArray = [];
-    const all = document.getElementsByClassName("all");
-    allArray.push(all);
-    console.log(allArray);
+  function handleFilterAll() {
+  setFilter("")
+  
   }
 
-  function filterPending() {
-    const pendingArray = [];
-    const pending = document.getElementsByClassName("active");
-    pendingArray.push(pending);
-    console.log(pendingArray);
+    function handleFilterActive() {
+      setFilter(false)
+
   }
 
-  function filterCompleted() {
-    const completedArray = [];
-    const completed = document.getElementsByClassName("completed");
-    completedArray.push(completed);
-    console.log(completedArray);
+  function handleFilterCompleted() {
+      setFilter(true)
   }
+
 
   return (
     <header className="Header">
@@ -46,15 +40,9 @@ export default function Header({ onAddToDo, isToggled }) {
         </button>
       </form>
       <div className="headerOptions">
-        <button onClick={filterAll} className="buttonOptions">
-          All
-        </button>
-        <button onClick={filterPending} className="buttonOptions">
-          Active
-        </button>
-        <button onClick={filterCompleted} className="buttonOptions">
-          Completed
-        </button>
+        <button onClick={handleFilterAll} className="buttonOptions">All</button>
+        <button onClick={handleFilterActive} className="buttonOptions">Active</button>
+        <button onClick={handleFilterCompleted} className="buttonOptions">Completed</button>
       </div>
     </header>
   );

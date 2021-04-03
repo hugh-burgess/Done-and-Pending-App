@@ -7,6 +7,14 @@ import React from "react";
 export default function App() {
   const [toDoBox, setToDoBox] = useState([]);
 
+  const [filter, setFilter] = useState("")
+  let filterBox = toDoBox;
+  if (filter !== "") {
+     filterBox = toDoBox.filter((toDoBox) => toDoBox.isComplete === filter);
+  } 
+
+
+console.log(filterBox)
   function handleDeleteToDo(index) {
     console.clear();
 
@@ -37,7 +45,6 @@ export default function App() {
   }
 
   function handleAddToDo(inputName) {
-    // console.clear();
     console.clear();
 
     const NewToDoName = [
@@ -63,11 +70,7 @@ export default function App() {
     console.log(index);
     const newTDName = toDoBox.map((toDoBox) => {
       if (toDoBox.index === index) {
-        // console.log(
-        //   `The list item with index number ${toDoBox.index} is now marked ${
-        //     !toDoBox.isComplete ? "Active" : "Completed"
-        //   }`
-        // );
+     
         return {
           ...toDoBox,
           name: newToDoName,
@@ -81,16 +84,19 @@ export default function App() {
     console.log(newTDName);
   }
 
+
   return (
     <div className="App">
-      <Header onAddToDo={handleAddToDo} />
+      <Header onAddToDo={handleAddToDo} setFilter={setFilter}/>
       <List
+
         handleRenamingToDo={handleRenamingToDo}
         setToDoBox={setToDoBox}
-        listItems={toDoBox}
+        listItems={filterBox}
         handleToggle={handleToggle}
         handleDeleteToDo={handleDeleteToDo}
       />
+      
     </div>
   );
 }
