@@ -1,3 +1,5 @@
+import React from "react"
+
 export default function Header({ onAddToDo, isToggled }) {
   function handleSubmit(event) {
     event.preventDefault();
@@ -8,29 +10,29 @@ export default function Header({ onAddToDo, isToggled }) {
   }
 
 function filterSelection1() {
+  const allArray = []
   const all = document.getElementsByClassName("all")
-  const main = document.querySelector("main")
-  main.append(all) 
-  console.log(all)
+  allArray.push(all) 
+  console.log(allArray)
+
 
 }
+
 
 function filterSelection2() {
+  const pendingArray = []
   const pending = document.getElementsByClassName("pending")
-  const completed = document.getElementsByClassName("completed")
-  const main = document.querySelector("main")
-  main.append(pending)
-console.log(pending)
+  pendingArray.push(pending) 
+  console.log(pendingArray)
 }
+
 
 function filterSelection3() {
+  const completedArray = []
   const completed = document.getElementsByClassName("completed")
-  const main = document.querySelector("main")
-  main.append(completed)
-console.log(completed)
-}
-
-
+  completedArray.push(completed) 
+  console.log(completedArray)
+  }
 
 
   return (
@@ -57,3 +59,6 @@ console.log(completed)
     </header>
   );
 }
+
+
+

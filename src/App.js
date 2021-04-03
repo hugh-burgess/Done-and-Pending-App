@@ -14,7 +14,7 @@ export default function App() {
   }
 
   function handleAddToDo(inputName) {
-    console.clear();
+    // console.clear();
 
     const NewToDoName = [
       ...toDoBox,
