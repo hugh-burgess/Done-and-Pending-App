@@ -7,6 +7,7 @@ export default function ListItem({
   isComplete,
   onTogglePresence,
   onDelete,
+  handleRenamingToDo,
 }) {
   function handleDeleteClick() {
     onDelete(index);
@@ -16,17 +17,12 @@ export default function ListItem({
     onTogglePresence(name, index);
   }
 
+  function handleEditName(index) {
+    const editMessage = prompt("Please rename here...");
+    handleRenamingToDo(editMessage, index);
+  }
   const listCompleted = isComplete ? "ListItemCompleted" : "ListItemPending";
   const classFilter = isComplete ? "completed" : "active";
-
-  const [taskName, setTaskName] = useState(`${name}`);
-  function handleEditName() {
-    const editMessage = prompt("Please enter a new name...");
-    if (editMessage !== "" && editMessage !== null) {
-      setTaskName(editMessage);
-      console.log(`${name} is now called '${editMessage}'`);
-    }
-  }
 
   return (
     <section className={`List ${listCompleted} all ${classFilter}`}>
@@ -34,8 +30,11 @@ export default function ListItem({
         x
       </button>
       <div className="nameWrapper">
-        <div className="name">{taskName}</div>
-        <AiFillEdit className="editIcon" onClick={handleEditName} />
+        <div className="name">{name}</div>
+        <AiFillEdit
+          className="editIcon"
+          onClick={() => handleEditName(index)}
+        />
       </div>
 
       <button onClick={handleToggleClick}>

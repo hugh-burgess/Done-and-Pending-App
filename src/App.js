@@ -16,24 +16,23 @@ export default function App() {
   }
 
   function handleToggle(name, index) {
-    console.clear();
-
-    const NewToDoName = toDoBox.map((input) => {
-      if (input.index === index) {
+    const NewToDoName = toDoBox.map((toDoBox) => {
+      if (toDoBox.index === index) {
         console.log(
-          `The list item with index number ${input.index} is now marked ${
-            !input.isComplete ? "Completed" : "Active"
+          `The list item with index number ${toDoBox.index} is now marked ${
+            !toDoBox.isComplete ? "Active" : "Completed"
           }`
         );
         return {
-          ...input,
-          isComplete: !input.isComplete,
+          ...toDoBox,
+          isComplete: !toDoBox.isComplete,
         };
       } else {
-        return input;
+        return toDoBox;
       }
     });
 
+    console.log(NewToDoName);
     setToDoBox(NewToDoName);
   }
 
@@ -50,14 +49,6 @@ export default function App() {
     ];
 
     for (let i = 0; i < NewToDoName.length; i++) {
-      if (NewToDoName[i].isComplete === false) {
-        console.log(`The list '${NewToDoName[i].name}' is now set to Active`);
-      } else {
-        console.log(
-          `The list name '${NewToDoName[i].name}' was created and is default Active`
-        );
-      }
-
       NewToDoName[i].index = i;
       console.log(
         `${NewToDoName[i].name} has index number ${NewToDoName[i].index}`
@@ -68,11 +59,34 @@ export default function App() {
     console.log(NewToDoName);
   }
 
+  function handleRenamingToDo(newToDoName, index) {
+    console.log(index);
+    const newTDName = toDoBox.map((toDoBox) => {
+      if (toDoBox.index === index) {
+        // console.log(
+        //   `The list item with index number ${toDoBox.index} is now marked ${
+        //     !toDoBox.isComplete ? "Active" : "Completed"
+        //   }`
+        // );
+        return {
+          ...toDoBox,
+          name: newToDoName,
+        };
+      } else {
+        return toDoBox;
+      }
+    });
+
+    setToDoBox(newTDName);
+    console.log(newTDName);
+  }
+
   return (
     <div className="App">
       <Header onAddToDo={handleAddToDo} />
       <List
-        key={handleAddToDo}
+        handleRenamingToDo={handleRenamingToDo}
+        setToDoBox={setToDoBox}
         listItems={toDoBox}
         handleToggle={handleToggle}
         handleDeleteToDo={handleDeleteToDo}
