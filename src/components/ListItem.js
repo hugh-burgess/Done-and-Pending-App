@@ -13,9 +13,11 @@ export default function ListItem({
   }
 
   const listCompleted = isComplete ? "ListItemCompleted" : "ListItemPending";
+  const classFilter = isComplete ? "completed" : "pending";
+
 
   return (
-    <section className={`List ${listCompleted}`}>
+    <section className={`List ${listCompleted} all ${classFilter}`}>
       <button className="ListItemDelete" onClick={handleDeleteClick}>
         x
       </button>

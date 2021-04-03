@@ -15,9 +15,29 @@ code {
 .Header {
   background-color: grey;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 1rem;
+  padding: 10px 0;
   justify-content: center;
+}
+
+.headerOptions {
+display: flex;
+padding: 10px; 
+}
+
+.buttonOptions {
+  height: 40px;
+  width: 20vw;
+  cursor: pointer;
+}
+
+.buttonOptions:hover {
+  text-decoration: underline;
+}
+
+.buttonOptions:active {
+  text-decoration: underline;
 }
 
 .List {
@@ -55,4 +75,12 @@ code {
 
 .inputBox {
   padding: 5px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
 }

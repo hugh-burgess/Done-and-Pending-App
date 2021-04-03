@@ -10,6 +10,7 @@ export default function App() {
   function handleDeleteToDo(name) {
     const NewToDoName = toDoBox.filter((toDoBox) => toDoBox.name !== name);
     setToDoBox(NewToDoName);
+    console.log(`deleted!`)
   }
 
   function handleAddToDo(inputName) {
@@ -27,7 +28,7 @@ export default function App() {
       if (NewToDoName[i].isComplete === false) {
         console.log(`${NewToDoName[i].name} is pending`);
       } else {
-      console.log(`${NewToDoName[i].name} is completed`)
+      console.log(`${NewToDoName[i].name} was created and is default completed`)
     }
       setToDoBox(NewToDoName);
     } 
@@ -37,7 +38,7 @@ export default function App() {
   function handleToggle(name) {
     const NewToDoName = toDoBox.map((input) => {
       if (input.name === name) {
-        console.log("done");
+        console.log(`${input.name} is now marked ${!input.isComplete ? "Completed" : "Pending"}`);
         return {
           ...input,
           isComplete: !input.isComplete,
@@ -49,6 +50,9 @@ export default function App() {
 
     setToDoBox(NewToDoName);
   }
+
+ 
+
 
   return (
     <div className="App">
