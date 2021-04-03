@@ -21,16 +21,13 @@ console.log(filterBox)
     const NewToDoName = toDoBox.filter((toDoBox) => toDoBox.index !== index);
     setToDoBox(NewToDoName);
     console.log("deleted!");
+
   }
 
   function handleToggle(name, index) {
     const NewToDoName = toDoBox.map((toDoBox) => {
       if (toDoBox.index === index) {
-        console.log(
-          `The list item with index number ${toDoBox.index} is now marked ${
-            !toDoBox.isComplete ? "Active" : "Completed"
-          }`
-        );
+        
         return {
           ...toDoBox,
           isComplete: !toDoBox.isComplete,
@@ -40,7 +37,6 @@ console.log(filterBox)
       }
     });
 
-    console.log(NewToDoName);
     setToDoBox(NewToDoName);
   }
 
