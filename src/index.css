@@ -21,9 +21,17 @@ code {
   justify-content: center;
 }
 
+.nameWrapper {
+  display: flex;
+}
+
+.name {
+  padding: 0 10px;
+}
+
 .headerOptions {
-display: flex;
-padding: 10px; 
+  display: flex;
+  padding: 10px;
 }
 
 .buttonOptions {
@@ -68,6 +76,12 @@ padding: 10px;
   color: red;
   flex-grow: 0;
   cursor: pointer;
+  width: 30px;
+}
+
+.ListItemDelete:hover {
+  background-color: rgba(255, 0, 0, 0.3);
+  border-radius: 5px;
 }
 
 .addButton {
@@ -78,3 +92,6 @@ padding: 10px;
   padding: 5px;
 }
 
+.editIcon:hover {
+  cursor: pointer;
+}

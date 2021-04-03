@@ -6,6 +6,7 @@ import React from "react";
 
 export default function App() {
   const [toDoBox, setToDoBox] = useState([]);
+
   function handleDeleteToDo(index) {
     console.clear();
 
@@ -20,9 +21,9 @@ export default function App() {
     const NewToDoName = toDoBox.map((input) => {
       if (input.index === index) {
         console.log(
-          `The list name '${input.name}' with index number ${
-            input.index
-          } is now marked ${!input.isComplete ? "Completed" : "Pending"}`
+          `The list item with index number ${input.index} is now marked ${
+            !input.isComplete ? "Completed" : "Active"
+          }`
         );
         return {
           ...input,
@@ -44,16 +45,16 @@ export default function App() {
       ...toDoBox,
       {
         name: inputName,
-        isComplete: true,
+        isComplete: false,
       },
     ];
 
     for (let i = 0; i < NewToDoName.length; i++) {
       if (NewToDoName[i].isComplete === false) {
-        console.log(`The list '${NewToDoName[i].name}' is now set to pending`);
+        console.log(`The list '${NewToDoName[i].name}' is now set to Active`);
       } else {
         console.log(
-          `The list name '${NewToDoName[i].name}' was created and is default completed`
+          `The list name '${NewToDoName[i].name}' was created and is default Active`
         );
       }
 

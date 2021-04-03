@@ -18,7 +18,7 @@ export default function Header({ onAddToDo, isToggled }) {
 
   function filterPending() {
     const pendingArray = [];
-    const pending = document.getElementsByClassName("pending");
+    const pending = document.getElementsByClassName("active");
     pendingArray.push(pending);
     console.log(pendingArray);
   }
@@ -50,7 +50,7 @@ export default function Header({ onAddToDo, isToggled }) {
           All
         </button>
         <button onClick={filterPending} className="buttonOptions">
-          Pending
+          Active
         </button>
         <button onClick={filterCompleted} className="buttonOptions">
           Completed
