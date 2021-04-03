@@ -14,8 +14,6 @@ function filterAll() {
   const all = document.getElementsByClassName("all")
   allArray.push(all) 
   console.log(allArray)
-
-
 }
 
 
