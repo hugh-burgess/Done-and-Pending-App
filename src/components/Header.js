@@ -1,5 +1,6 @@
 import React from "react"
 
+
 export default function Header({ onAddToDo, isToggled }) {
   function handleSubmit(event) {
     event.preventDefault();
@@ -14,7 +15,8 @@ function filterAll() {
   const all = document.getElementsByClassName("all")
   allArray.push(all) 
   console.log(allArray)
-}
+   }
+
 
 
 function filterPending() {
