@@ -1,5 +1,4 @@
-import React from "react"
-
+import React from "react";
 
 export default function Header({ onAddToDo, isToggled }) {
   function handleSubmit(event) {
@@ -10,30 +9,26 @@ export default function Header({ onAddToDo, isToggled }) {
     form.reset();
   }
 
-function filterAll() {
-  const allArray = []
-  const all = document.getElementsByClassName("all")
-  allArray.push(all) 
-  console.log(allArray)
-   }
-
-
-
-function filterPending() {
-  const pendingArray = []
-  const pending = document.getElementsByClassName("pending")
-  pendingArray.push(pending) 
-  console.log(pendingArray)
-}
-
-
-function filterCompleted() {
-  const completedArray = []
-  const completed = document.getElementsByClassName("completed")
-  completedArray.push(completed) 
-  console.log(completedArray)
+  function filterAll() {
+    const allArray = [];
+    const all = document.getElementsByClassName("all");
+    allArray.push(all);
+    console.log(allArray);
   }
 
+  function filterPending() {
+    const pendingArray = [];
+    const pending = document.getElementsByClassName("pending");
+    pendingArray.push(pending);
+    console.log(pendingArray);
+  }
+
+  function filterCompleted() {
+    const completedArray = [];
+    const completed = document.getElementsByClassName("completed");
+    completedArray.push(completed);
+    console.log(completedArray);
+  }
 
   return (
     <header className="Header">
@@ -51,14 +46,16 @@ function filterCompleted() {
         </button>
       </form>
       <div className="headerOptions">
-      <button onClick={filterAll} className="buttonOptions">All</button>
-      <button onClick={filterPending} className="buttonOptions">Pending</button>
-      <button onClick={filterCompleted} className="buttonOptions">Completed</button>
+        <button onClick={filterAll} className="buttonOptions">
+          All
+        </button>
+        <button onClick={filterPending} className="buttonOptions">
+          Pending
+        </button>
+        <button onClick={filterCompleted} className="buttonOptions">
+          Completed
+        </button>
       </div>
-      
     </header>
   );
 }
-
-
-

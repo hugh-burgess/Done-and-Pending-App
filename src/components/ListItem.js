@@ -1,24 +1,24 @@
 export default function ListItem({
+  index,
   name,
   isComplete,
   onTogglePresence,
   onDelete,
 }) {
   function handleDeleteClick() {
-    onDelete(name);
+    onDelete(index);
   }
 
   function handleToggleClick() {
-    onTogglePresence(name);
+    onTogglePresence(name, index);
   }
 
   const listCompleted = isComplete ? "ListItemCompleted" : "ListItemPending";
   const classFilter = isComplete ? "completed" : "pending";
 
-
   return (
     <section className={`List ${listCompleted} all ${classFilter}`}>
-      <button className="ListItemDelete" onClick={handleDeleteClick}>
+      <button id={index} className="ListItemDelete" onClick={handleDeleteClick}>
         x
       </button>
       <div>{name}</div>
