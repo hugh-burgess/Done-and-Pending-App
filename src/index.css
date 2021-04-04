@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #e0e0e0;
+  background-repeat: no-repeat;
+  height: auto;
+  color: var(--fg);
 }
 
 code {
@@ -12,13 +16,18 @@ code {
     monospace;
 }
 
-.Header {
-  background-color: grey;
-  display: flex;
+.header {
+  grid-column: width;
+  grid-row: header;
   flex-direction: column;
   align-items: center;
   padding: 10px 0;
   justify-content: center;
+}
+
+.main {
+  grid-column: width;
+  grid-row: main;
 }
 
 .nameWrapper {
@@ -31,31 +40,45 @@ code {
 
 .headerOptions {
   display: flex;
+  justify-content: center;
   padding: 10px;
 }
 
 .buttonOptions {
   height: 30px;
   width: 20vw;
-  margin: 2px;
+  margin: 0 2px;
   cursor: pointer;
-}
-
-.buttonOptions:hover {
-  text-decoration: underline;
+  color: var(--shade4);
+  border-radius: 21px;
+  background: linear-gradient(145deg, #e5e6e6, #ffffff);
+  box-shadow: 3px 3px 6px #c6c7c7, -3px -3px 6px #ffffff;
+  transition: margin 0.5s, color 0.5s;
 }
 
 .buttonOptions:active {
   text-decoration: underline;
+  box-shadow: 0 0 0 var(--shade4) inset, 0 0 0 var(--shade1) inset,
+    0 0 0 var(--shade1), 0 0 0 var(--shade4);
+}
+
+.buttonOptions:hover {
+  margin: 0 20px;
+  color: var(--shade5);
 }
 
 .List {
   display: flex;
   justify-content: space-between;
   margin: 10px;
-  border: black 1px solid;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 46px;
+  background: linear-gradient(145deg, #e5e6e6, #ffffff);
+  box-shadow: 13px 13px 38px #afafaf, -13px -13px 38px #ffffff;
+}
+
+.nameWrapper {
+  align-items: center;
 }
 
 .ListedItem {
@@ -65,33 +88,72 @@ code {
 }
 
 .ListItemCompleted {
-  color: #2f5d62;
+  color: var(--complete);
 }
 
 .ListItemPending {
-  color: #ffb037;
+  color: var(--pending);
 }
 
 .ListItemDelete {
-  color: red;
+  border-radius: 21px;
+  background: linear-gradient(145deg, #e5e6e6, #ffffff);
+  box-shadow: 3px 3px 6px #c6c7c7, -3px -3px 6px #ffffff;
+  color: var(--shade4);
   flex-grow: 0;
   cursor: pointer;
-  width: 30px;
+  height: 25px;
+  width: 25px;
+  align-self: center;
+  transition: width 0.5s;
 }
 
 .ListItemDelete:hover {
   background-color: rgba(255, 0, 0, 0.3);
-  border-radius: 5px;
+  width: 60px;
 }
 
 .addButton {
-  padding: 4px;
+  color: var(--shade4);
+  padding: 8px;
+  margin-left: 5px;
+  border-radius: 46px;
+  background-color: #e5e6e6;
+  box-shadow: 13px 13px 38px #afafaf, -13px -13px 38px #ffffff;
+  transition: color 0.5s, background-color 1s;
+}
+
+.addButton:hover {
+  color: var(--shade5);
+  cursor: pointer;
+  background-color: #a3a3a3;
 }
 
 .inputBox {
-  padding: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 30px 60px (167, 179, 190, 0.35);
+  box-shadow: 0px -30px 60px (248, 252, 255, 0.5);
+}
+
+.inputBox:active {
+  border: none;
 }
 
 .editIcon:hover {
+  cursor: pointer;
+}
+
+.statusButton {
+  color: var(--shade4);
+  border-radius: 21px;
+  background-color: linear-gradient(145deg, #e5e6e6, #ffffff);
+  box-shadow: 3px 3px 6px #c6c7c7, -3px -3px 6px #ffffff;
+  padding: 5px 10px;
+  transition: padding 0.5s;
+}
+
+.statusButton:hover {
+  padding: 5px 30px;
   cursor: pointer;
 }

@@ -25,7 +25,7 @@ export default function Header({ onAddToDo, setFilter }) {
 
 
   return (
-    <header className="Header">
+    <header className="header">
       <form onSubmit={handleSubmit}>
         <input
           className="inputBox"

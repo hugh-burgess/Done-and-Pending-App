@@ -84,7 +84,9 @@ console.log(filterBox)
   return (
     <div className="App">
       <Header onAddToDo={handleAddToDo} setFilter={setFilter}/>
-      <List
+      
+      <main className="main">
+       <List
 
         handleRenamingToDo={handleRenamingToDo}
         setToDoBox={setToDoBox}
@@ -92,6 +94,8 @@ console.log(filterBox)
         handleToggle={handleToggle}
         handleDeleteToDo={handleDeleteToDo}
       />
+      </main>
+     
       
     </div>
   );

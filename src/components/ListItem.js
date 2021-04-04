@@ -36,7 +36,7 @@ export default function ListItem({
         />
       </div>
 
-      <button onClick={handleToggleClick}>
+      <button className="statusButton" onClick={handleToggleClick}>
         {isComplete ? "Completed" : "Active"}
       </button>
     </section>

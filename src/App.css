@@ -8,6 +8,18 @@
 
 .App {
   text-align: center;
+  display: grid;
+  grid-template-columns: [width] 100vw;
+  grid-template-rows: [header] 110px [main] auto;
+}
 
-
+:root {
+  --fg: #d2deef;
+  --shade1: #eaf0f8;
+  --shade2: #f8fcff;
+  --shade3: #ffffff;
+  --shade4: #66727c;
+  --shade5: #000;
+  --complete: #2e9116;
+  --pending: #153ce7;
 }
