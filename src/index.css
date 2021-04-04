@@ -120,13 +120,13 @@ code {
   border-radius: 46px;
   background-color: #e5e6e6;
   box-shadow: 13px 13px 38px #afafaf, -13px -13px 38px #ffffff;
-  transition: color 0.5s, background-color 1s;
+  transition: color 0.3s, background-color 0.3s;
 }
 
 .addButton:hover {
   color: var(--shade5);
   cursor: pointer;
-  background-color: #a3a3a3;
+  background-color: #d4d4d4;
 }
 
 .inputBox {
