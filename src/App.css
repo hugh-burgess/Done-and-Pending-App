@@ -9,8 +9,9 @@
 .App {
   text-align: center;
   display: grid;
-  grid-template-columns: [width] 100vw;
+  grid-template-columns: [width] 80vw;
   grid-template-rows: [header] 110px [main] auto;
+  justify-content: center;
 }
 
 :root {

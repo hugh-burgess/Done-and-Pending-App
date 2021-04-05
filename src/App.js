@@ -7,27 +7,25 @@ import React from "react";
 export default function App() {
   const [toDoBox, setToDoBox] = useState([]);
 
-  const [filter, setFilter] = useState("")
+  const [filter, setFilter] = useState("");
   let filterBox = toDoBox;
   if (filter !== "") {
-     filterBox = toDoBox.filter((toDoBox) => toDoBox.isComplete === filter);
-  } 
+    filterBox = toDoBox.filter((toDoBox) => toDoBox.isComplete === filter);
+  }
 
-
-console.log(filterBox)
+  console.log(filterBox);
   function handleDeleteToDo(index) {
     console.clear();
 
     const NewToDoName = toDoBox.filter((toDoBox) => toDoBox.index !== index);
     setToDoBox(NewToDoName);
-    console.log("deleted!");
 
+    console.log("deleted!");
   }
 
   function handleToggle(name, index) {
     const NewToDoName = toDoBox.map((toDoBox) => {
       if (toDoBox.index === index) {
-        
         return {
           ...toDoBox,
           isComplete: !toDoBox.isComplete,
@@ -66,7 +64,6 @@ console.log(filterBox)
     console.log(index);
     const newTDName = toDoBox.map((toDoBox) => {
       if (toDoBox.index === index) {
-     
         return {
           ...toDoBox,
           name: newToDoName,
@@ -80,23 +77,19 @@ console.log(filterBox)
     console.log(newTDName);
   }
 
-
   return (
     <div className="App">
-      <Header onAddToDo={handleAddToDo} setFilter={setFilter}/>
-      
-      <main className="main">
-       <List
+      <Header onAddToDo={handleAddToDo} setFilter={setFilter} />
 
-        handleRenamingToDo={handleRenamingToDo}
-        setToDoBox={setToDoBox}
-        listItems={filterBox}
-        handleToggle={handleToggle}
-        handleDeleteToDo={handleDeleteToDo}
-      />
+      <main className="main">
+        <List
+          handleRenamingToDo={handleRenamingToDo}
+          setToDoBox={setToDoBox}
+          listItems={filterBox}
+          handleToggle={handleToggle}
+          handleDeleteToDo={handleDeleteToDo}
+        />
       </main>
-     
-      
     </div>
   );
 }
