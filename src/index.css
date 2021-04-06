@@ -72,7 +72,7 @@ code {
 .List {
   display: flex;
   justify-content: space-between;
-  margin: 10px;
+  margin: 10px auto;
   padding: 10px;
   border-radius: 46px;
   background: linear-gradient(145deg, var(--shade1), var(--shade3));
@@ -80,19 +80,20 @@ code {
   animation-name: appear;
   animation-duration: 0.7s;
   animation-fill-mode: forwards;
+  width: 60vw;
 
-  transform: perspective(90px) translateZ(0px);
+  transform: translateZ(0px);
   transition: transform 100ms linear;
 }
 
 @keyframes appear {
   from {
-    transform: perspective(90px) translateZ(0px) translateY(-20px);
+    transform: translateZ(0px) translateY(-20px);
     transition: transform 100ms ease-in;
     opacity: 0;
   }
   to {
-    transform: perspective(90px) translateZ(15px) translateY(0px);
+    transform: translateZ(15px) translateY(0px);
 
     opacity: 1;
   }
