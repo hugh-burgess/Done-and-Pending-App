@@ -26,7 +26,7 @@ export default function Header({ onAddToDo, setFilter }) {
       <form onSubmit={handleSubmit}>
         <input
           className="inputBox"
-          maxlength="12"
+          maxlength="11"
           id="input"
           name="input"
           type="text"
