@@ -158,10 +158,13 @@ code {
   padding: 10px;
   border-radius: 10px;
   box-shadow: 3px 3px 6px var(--shade6), -3px -3px 6px var(--shade3);
+  width: 100px;
+  transition: width 0.7s;
 }
 
 .inputBox:active {
   border: none;
+  width: 200px;
 }
 
 .editIcon:hover {
