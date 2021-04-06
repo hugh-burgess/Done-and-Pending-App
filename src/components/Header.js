@@ -10,19 +10,16 @@ export default function Header({ onAddToDo, setFilter }) {
   }
 
   function handleFilterAll() {
-  setFilter("")
-  
+    setFilter("");
   }
 
-    function handleFilterActive() {
-      setFilter(false)
-
+  function handleFilterActive() {
+    setFilter(false);
   }
 
   function handleFilterCompleted() {
-      setFilter(true)
+    setFilter(true);
   }
-
 
   return (
     <header className="header">
@@ -40,9 +37,15 @@ export default function Header({ onAddToDo, setFilter }) {
         </button>
       </form>
       <div className="headerOptions">
-        <button onClick={handleFilterAll} className="buttonOptions">All</button>
-        <button onClick={handleFilterActive} className="buttonOptions">Active</button>
-        <button onClick={handleFilterCompleted} className="buttonOptions">Completed</button>
+        <button onClick={handleFilterAll} className="buttonOptions">
+          All
+        </button>
+        <button onClick={handleFilterActive} className="buttonOptions">
+          Active
+        </button>
+        <button onClick={handleFilterCompleted} className="buttonOptions">
+          Completed
+        </button>
       </div>
     </header>
   );

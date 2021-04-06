@@ -162,9 +162,9 @@ code {
   transition: width 0.7s;
 }
 
-.inputBox:active {
-  border: none;
-  width: 200px;
+.inputBox:focus,
+.inputBox:valid {
+  width: 190px;
 }
 
 .editIcon:hover {
