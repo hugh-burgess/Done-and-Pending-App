@@ -13,19 +13,19 @@ export default function ListItem({
   }
 
   function handleToggleClick() {
-    onTogglePresence(name, index);
+    onTogglePresence(index);
   }
 
   function handleEditName(index) {
     const editMessage = prompt("Please rename here...");
     handleRenamingToDo(editMessage, index);
   }
-  const listCompleted = isComplete ? "ListItemCompleted" : "ListItemPending";
+  const listCompleted = isComplete ? "listItemCompleted" : "listItemPending";
   const classFilter = isComplete ? "completed" : "active";
 
   return (
     <section className={`List ${listCompleted} all ${classFilter}`}>
-      <button id={index} className="ListItemDelete" onClick={handleDeleteClick}>
+      <button id={index} className="listItemDelete" onClick={handleDeleteClick}>
         x
       </button>
       <div className="nameWrapper">

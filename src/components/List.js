@@ -20,5 +20,5 @@ export default function List({
       );
     });
   }
-  return <main className="ListedItem">{renderList()}</main>;
+  return <main className="listedItem">{renderList()}</main>;
 }
