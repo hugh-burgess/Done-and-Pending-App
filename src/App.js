@@ -20,7 +20,7 @@ export default function App() {
     setToDos(newTDs);
   }
 
-  function handleToggle(name, index) {
+  function handleToggle(index) {
     const newTDs = toDos.map((toDos) => {
       if (toDos.index === index) {
         return {
