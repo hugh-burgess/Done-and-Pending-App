@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Header({ onAddToDo, setFilter }) {
+export default function Header({ onAddToDo, onFilterChange }) {
   function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
@@ -10,15 +10,15 @@ export default function Header({ onAddToDo, setFilter }) {
   }
 
   function handleFilterAll() {
-    setFilter("");
+    onFilterChange("");
   }
 
   function handleFilterActive() {
-    setFilter(false);
+    onFilterChange(false);
   }
 
   function handleFilterCompleted() {
-    setFilter(true);
+    onFilterChange(true);
   }
 
   return (

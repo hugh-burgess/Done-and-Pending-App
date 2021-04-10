@@ -1,7 +1,6 @@
 import ListItem from "./ListItem.js";
 
 export default function List({
-  setToDoBox,
   listItems,
   handleToggle,
   handleDeleteToDo,
@@ -12,7 +11,6 @@ export default function List({
       return (
         <ListItem
           handleRenamingToDo={handleRenamingToDo}
-          setToDoBox={setToDoBox}
           index={toDoBox.index}
           name={toDoBox.name}
           isComplete={toDoBox.isComplete}

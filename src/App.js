@@ -5,86 +5,74 @@ import { useState } from "react";
 import React from "react";
 
 export default function App() {
-  const [toDoBox, setToDoBox] = useState([]);
+  const [toDos, setToDos] = useState([]);
 
   const [filter, setFilter] = useState("");
-  let filterBox = toDoBox;
+  let filterBox = toDos;
   if (filter !== "") {
-    filterBox = toDoBox.filter((toDoBox) => toDoBox.isComplete === filter);
+    filterBox = toDos.filter((todo) => todo.isComplete === filter);
   }
 
-  console.log(filterBox);
   function handleDeleteToDo(index) {
     console.clear();
 
-    const NewToDoName = toDoBox.filter((toDoBox) => toDoBox.index !== index);
-    setToDoBox(NewToDoName);
-
-    console.log("deleted!");
+    const newTDs = toDos.filter((todo) => todo.index !== index);
+    setToDos(newTDs);
   }
 
   function handleToggle(name, index) {
-    const NewToDoName = toDoBox.map((toDoBox) => {
-      if (toDoBox.index === index) {
+    const newTDs = toDos.map((toDos) => {
+      if (toDos.index === index) {
         return {
-          ...toDoBox,
-          isComplete: !toDoBox.isComplete,
+          ...toDos,
+          isComplete: !toDos.isComplete,
         };
       } else {
-        return toDoBox;
+        return toDos;
       }
     });
 
-    setToDoBox(NewToDoName);
+    setToDos(newTDs);
   }
 
   function handleAddToDo(inputName) {
-    console.clear();
-
-    const NewToDoName = [
-      ...toDoBox,
+    const newTDs = [
+      ...toDos,
       {
         name: inputName,
         isComplete: false,
       },
     ];
 
-    for (let i = 0; i < NewToDoName.length; i++) {
-      NewToDoName[i].index = i;
-      console.log(
-        `${NewToDoName[i].name} has index number ${NewToDoName[i].index}`
-      );
-      setToDoBox(NewToDoName);
-    }
+    for (let i = 0; i < newTDs.length; i++) {
+      newTDs[i].index = i;
 
-    console.log(NewToDoName);
+      setToDos(newTDs);
+    }
   }
 
-  function handleRenamingToDo(newToDoName, index) {
-    console.log(index);
-    const newTDName = toDoBox.map((toDoBox) => {
-      if (toDoBox.index === index) {
+  function handleRenamingToDo(newTDs, index) {
+    const newTDName = toDos.map((toDos) => {
+      if (toDos.index === index) {
         return {
-          ...toDoBox,
-          name: newToDoName,
+          ...toDos,
+          name: newTDs,
         };
       } else {
-        return toDoBox;
+        return toDos;
       }
     });
 
-    setToDoBox(newTDName);
-    console.log(newTDName);
+    setToDos(newTDName);
   }
 
   return (
     <div className="App">
-      <Header onAddToDo={handleAddToDo} setFilter={setFilter} />
+      <Header onAddToDo={handleAddToDo} onFilterChange={setFilter} />
 
       <main className="main">
         <List
           handleRenamingToDo={handleRenamingToDo}
-          setToDoBox={setToDoBox}
           listItems={filterBox}
           handleToggle={handleToggle}
           handleDeleteToDo={handleDeleteToDo}
